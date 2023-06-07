@@ -81,8 +81,13 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",  # engine: mysql
+        "NAME": "Windows23",  # DB Name
+        "USER": "windows23",  # DB User
+        "PASSWORD": "windows23",  # Password
+        "HOST": "windows23.c7fq71egwjvc.us-west-2.rds.amazonaws.com",  # Created DB Endpoint
+        "PORT": "3306",  # Port
+        "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'"},
     }
 }
 
@@ -105,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# AWS 미정
+# AWS S3 or Lambda
 
 
 # Internationalization
